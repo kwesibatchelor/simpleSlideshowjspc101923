@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Image Slideshow</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <img id="slide" src="2Tone.PNG" alt="Image">
+    <script>
+        var i = 0; // Start point
+        var images = [];
+        var time = 3000;
+
+        // Image List
+        images[0] = '2Tone.PNG';
+        images[1] = '293.PNG';
+        images[2] = 'ape.PNG';
+        images[3] = 'mach.PNG';
+        images[4] = 'moon.PNG';
+        images[5] = 'naka.PNG';
+        images[6] = 'snorkels.png';
+
+        // Change image
+        function changeImg() {
+            document.getElementById('slide').src = images[i];
+
+            if (i < images.length - 1) {
+                i++;
+            } else {
+                i = 0;
+            }
+
+            setTimeout(changeImg, time); // Passing the function reference directly, not as a string
+        }
+
+        window.onload = changeImg;
+    </script>
+</body>
+</html>
+
+
